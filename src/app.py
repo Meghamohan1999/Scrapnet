@@ -404,21 +404,21 @@ def rejectprice():
     return '''<script>alert("Price Rejected..");window.location="/requeststatus"</script>'''
 
 
-# @app.route('/sendcomplaint',methods=['post'])
-# #@login_required
-# def sendcomplaint():
-#     return render_template('user/send complaint.html')
+@app.route('/sendcomplaint',methods=['post'])
+#@login_required
+def sendcomplaint():
+    return render_template('user/send complaint.html')
 
-# @app.route('/sendcomplaintcode',methods=['post'])
-# #@login_required
-# def sendcomplaintcode():
-#     complaint=request.form['textarea']
-#     qry="insert into complaint values(null,%s,%s,'pending',curdate())"
-#     val=(session['lid'],complaint)
-#     iud(qry,val)
+@app.route('/sendcomplaintcode',methods=['post'])
+#@login_required
+def sendcomplaintcode():
+    complaint=request.form['textarea']
+    qry="insert into complaint values(null,%s,%s,'pending',curdate())"
+    val=(session['lid'],complaint)
+    iud(qry,val)
 
 
-#     return '''<script>alert("successfully Added...");window.location="/viewreplyandsendcomplaint"</script>'''
+    return '''<script>alert("successfully Added...");window.location="/viewreplyandsendcomplaint"</script>'''
 
 
 
