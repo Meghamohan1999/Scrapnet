@@ -422,24 +422,24 @@ def sendcomplaintcode():
 
 
 
-# @app.route('/sendrating',methods=['post','get'])
-# #@login_required
-# def sendrating():
-#     qry="select * from scrap"
-#     res=selectall(qry)
-#     return render_template('user/send rating.html',val=res)
-# @app.route('/sendratingcode',methods=['post'])
-# #@login_required
-# def sendratingcode():
-#     scrapid = request.form['select']
-#     rating=request.form['textfield']
-#     qry="INSERT INTO `rating` VALUES (NULL,%s,%s,%s,CURDATE())"
-#     val=(session['lid'],scrapid,rating)
-#     print(val)
-#     iud(qry,val)
+@app.route('/sendrating',methods=['post','get'])
+#@login_required
+def sendrating():
+    qry="select * from scrap"
+    res=selectall(qry)
+    return render_template('user/send rating.html',val=res)
+@app.route('/sendratingcode',methods=['post'])
+#@login_required
+def sendratingcode():
+    scrapid = request.form['select']
+    rating=request.form['textfield']
+    qry="INSERT INTO `rating` VALUES (NULL,%s,%s,%s,CURDATE())"
+    val=(session['lid'],scrapid,rating)
+    print(val)
+    iud(qry,val)
 
 
-#     return '''<script>alert("successfully Added...");window.location="/viewscrapratinguser"</script>'''
+    return '''<script>alert("successfully Added...");window.location="/viewscrapratinguser"</script>'''
 
 
 # @app.route('/sendrequest')
