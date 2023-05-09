@@ -1,0 +1,42 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'rto/rto_index.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="job_details">
+  <center>
+        <h3><u>
+
+        </u></h3>
+      </center>
+  <div align="center">
+    <table class="table table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Complaint</th>
+
+        <th>date</th>
+        <th></th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i[0]}}&nbsp;{{i[1]}}</td>
+        <td>&nbsp;{{i[4]}}</td>
+        <td>&nbsp;{{i[6]}}</td>
+
+
+        <td><a href="sendreply?id={{i[2]}}#about">reply</a> <br><br></td>
+      </tr>
+      {%endfor%}
+      </table>
+    <br>
+
+  </div>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
