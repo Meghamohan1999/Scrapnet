@@ -1,0 +1,88 @@
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'index.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="register1">
+  <table width="200" border="1" align="center"  id="customers">
+    <center><h3>Scrap Registration Form</h3></center>
+    <br>
+    <tr>
+      <td>first name :</td>
+      <td><label>
+        <input type="text" name="textfield" pattern="[A-Z a-z]{2,}" title="Non-alphabetic Characters are invalid !" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>last name :</td>
+      <td><label>
+        <input type="text" name="textfield9" pattern="[A-Z a-z]{2,}" title="Non-alphabetic Characters are invalid !" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Place :</td>
+      <td><label>
+        <input type="text" name="textfield2" pattern="[A-Z a-z]{2,}" title="Non-alphabetic Characters are invalid !" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Post :</td>
+      <td><label>
+        <input type="text" name="textfield3" pattern="[A-Z a-z]{2,}" title="Enter a valid Post ! <br> Non-alphabetic Characters are invalid !" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Pin :</td>
+      <td><label>
+        <input type="text" name="textfield4" pattern="[0-9]{6}" title="Enter a valid Pin !" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone :</td>
+      <td><label>
+        <input type="text" name="textfield5" pattern="[6789][0-9]{9}" title="Enter a Valid Phone Number !" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>E-mail Id :</td>
+      <td><label>
+        <input type="text" name="textfield6" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" title="Enter a valid Email !" Required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>User name :</td>
+      <td><label>
+        <input type="text" name="textfield7" pattern="[A-Z a-z @]{3,}" title="Non-alphabetic Characters are invalid [Except @]!" Required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Password :</td>
+      <td><label>
+        <input type="password" name="textfield8" id="myInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" Required/> <input type="checkbox" onclick="myFunction()">Show Password
+      </label></td>
+    </tr>
+  </table>
+  <p align="center">
+    <label>
+    <input type="submit" name="Submit" value="Register" class="btn btn-outline-secondary" />
+    </label>
+  </p>
+</form>
+</body>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+<!--</html>-->
+{% endblock %}

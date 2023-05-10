@@ -1,0 +1,59 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'scrap/scrap_index.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="job_details">
+  <center>
+        <h3><u>
+
+        </u></h3>
+      </center>
+  <div align="center">
+    <table class="table table-hover">
+      <tr>
+        <th>Owner Name</th>
+        <th>Reg number</th>
+        <th>car model</th>
+        <th>Engine number</th>
+        <th>chases number</th>
+        <th>seater</th>
+        <th>date</th>
+        <th>Fuel type</th>
+        <th>Condition</th>
+        <th>Reg year</th>
+        <th>Wheel type</th>
+         <th></th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i[0]}}&nbsp;{{i[1]}}</td>
+        <td>&nbsp;{{i[8]}}&nbsp;</td>
+        <td>&nbsp;{{i[4]}}</td>
+        <td>{{i[5]}}</td>
+        <td>&nbsp;{{i[6]}}&nbsp;</td>
+        <td>&nbsp;{{i[7]}}</td>
+        <td>{{i[13]}}</td>
+        <td>{{i[9]}}</td>
+        <td>{{i[10]}}</td>
+        <td>{{i[11]}}</td>
+        <td>{{i[12]}}</td>
+        {% if i[15]=='pending' %}
+        <td><a href="verify?id={{i[14]}}">verify</a> <br><br></td>
+        {% else %}
+        <td>{{ i[15] }}</td>
+        {% endif %}
+      </tr>
+      {%endfor%}
+      </table>
+    <br>
+
+  </div>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
