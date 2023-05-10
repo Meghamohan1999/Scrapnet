@@ -1,0 +1,23 @@
+{% extends 'user/user_index.html'%}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+    <table class="table table-hover">
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">CAR</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">DATE</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i[2]}} {{i[3]}}&nbsp;</td>
+      <td>&nbsp;{{i[4]}}</td>
+      <td>&nbsp;{{i[1]}}</td>
+      <td>&nbsp;{{i[5]}}</td>
+      <td><a href="/priceinfo_user1?id={{i[0]}}">Predict</a><a href="acceptbyuser?id={{i[0]}}">Accept</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+{% endblock %}
