@@ -1,0 +1,41 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'user/user_index.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="sendrequestcode" enctype="multipart/form-data">
+  <div align="center">
+    <table class="table table-hover">
+      <tr>
+        <th scope="row">Scraper</th>
+        <td><select name="select">
+          {% for i in val %}
+          <option value="{{i[1]}}"> {{i[2]}}&nbsp;{{i[3]}}</option>
+          {% endfor %}
+        </select>        </td>
+      </tr>
+      <tr>
+        <th scope="row">Car</th>
+        <td><select name="select2">
+           {% for j in val1 %}
+          <option value="{{j[0]}}"> {{j[2]}}</option>
+          {% endfor %}
+        </select>        </td>
+      </tr>
+      <tr>
+        <th>Car Image</th>
+        <td><input type="file" name="img" required></td>
+      </tr>
+      <tr>
+        <th colspan="2" scope="row"><input type="submit" name="Submit" value="send" /></th>
+      </tr>
+      </table>
+  </div>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
