@@ -1,0 +1,62 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'user/user_index.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="job_details">
+  <center>
+        <h3><u>
+
+        </u></h3>
+      </center>
+  <div align="center">
+    <table class="table table-hover">
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th> date</th>
+        <th> Scraper rate</th>
+        <th>status</th>
+        <td></td>
+        <td></td>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td><img src="../static/carimg/{{i[5]}}.png" width="150" height="150"/> </td>
+        <td>{{i[0]}} {{i[1]}}</td>
+        <td>&nbsp;{{i[3]}}</td>
+        <td>{{ i[6] }}</td>
+        <td>&nbsp;{{i[2]}}</td>
+        {% if i[6]==None %}
+        <td></td>
+        <td></td>
+        {% elif i[2]=='Price rejected' %}
+        <td>Price Rejected</td>
+        <td></td>
+        {% elif i[2]=='price ok' %}
+        <td>Price Accepted</td>
+        <td></td>
+        {% elif i[2]=='Accepted by RTO' %}
+        <td></td>
+        <td></td>
+        {% elif i[2]=='Certified' %}
+        <td>Certified</td>
+        <td></td>
+        {% else %}
+        <td><a href="acceptprice?id={{ i[5] }}">ACCEPT</a> </td>
+        <td><a href="rejectprice?id={{ i[5] }}">REJECT</a> </td>
+        {% endif %}
+      </tr>
+      {%endfor%}
+      </table>
+    <br>
+
+  </div>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
