@@ -1,0 +1,44 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'user/user_index.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="job_details">
+  <center>
+        <h3><u>
+
+        </u></h3>
+      </center>
+  <div align="center">
+    <table class="table table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>contact</th>
+        <th>Location</th>
+        <th></th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i[2]}}&nbsp;&nbsp;{{i[3]}}</td>
+        <td>&nbsp;{{i[4]}}<br>{{i[5]}}&nbsp;<br>{{i[6]}}</td>
+        <td>&nbsp;{{i[7]}}
+          <br>{{i[8]}}</td>
+        <td>Latitude: {{ i[11] }} <br> Lonitude: {{ i[12] }}</td>
+        <td><a href="sendrequest?id={{i[1]}}#about">request</a></td>
+
+
+      </tr>
+      {%endfor%}
+      </table>
+    <br>
+
+  </div>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
